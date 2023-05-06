@@ -1,0 +1,19 @@
+#MÉTODOS NUMÉRICOS COMPUTACIONAIS
+#925-79933
+#Caio dos Santos Campos
+#2019100583
+
+import numpy as np
+
+matriz = np.array([[3, 2, 7], [2, 5, 7], [7, 1, 8]])
+autovalores, autovetores = np.linalg.eig(matriz)
+
+
+print("Autovalores: ", autovalores)
+print("\n Autovetores: \n", autovetores)
+U, S, Vt = np.linalg.svd(matriz)
+
+
+print("\n Matriz U: \n", U)
+print("\n Matriz S: \n", S)
+print("\n Matriz Vt: \n", Vt)
