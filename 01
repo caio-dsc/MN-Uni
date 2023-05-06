@@ -1,0 +1,28 @@
+#MÉTODOS NUMÉRICOS COMPUTACIONAIS
+#925-79933
+#Caio dos Santos Campos
+#2019100583
+
+hex_number = 'FFFAEDA10'
+
+decimal = int(hex_number, 16)
+binario = bin(decimal)
+octal = oct(decimal)
+
+
+def heptadecimal(decimal):
+    hepta_digitos = "0123456"
+    heptadecimal = ""
+    while decimal != 0:
+        remainder = decimal % 7
+        heptadecimal = hepta_digitos[remainder] + heptadecimal
+        decimal = decimal // 7
+    return heptadecimal
+heptadecimal = heptadecimal(decimal)
+
+
+print("Número hexadecimal:", hex_number)
+print("Número decimal:", decimal)
+print("Número binário:", binario)
+print("Número octal:", octal)
+print("Número heptadecimal:", heptadecimal)
