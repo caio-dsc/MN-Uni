@@ -1,0 +1,43 @@
+#MÉTODOS NUMÉRICOS COMPUTACIONAIS
+#925-79933
+#Caio dos Santos Campos
+#2019100583
+
+def f(x):
+    return x*4 - 7*x*2 + x - 8
+
+def df(x):
+    return 4*x**3 - 14*x + 1
+
+a, b = -5, 5
+precisao = 1E-06
+
+#Bissecção
+fa, fb = f(a), f(b)
+iteracoes_bisseccao = 0
+while (b - a) > precisao:
+    c = (a + b) / 2
+    fc = f(c)
+    iteracoes_bisseccao += 1
+    if fa * fc < 0:
+        b, fb = c, fc
+    else:
+        a, fa = c, fc
+raiz_bisseccao = (a + b) / 2
+
+#Quase-Newton
+xk = (a + b) / 2
+iteracoes_quasenewton = 0
+while True:
+    xk1 = xk - f(xk) / df(xk)
+    iteracoes_quasenewton += 1
+    if abs(xk1 - xk) < precisao:
+        break
+    xk = xk1
+raiz_quasenewton = xk1
+
+
+print("Raiz pelo método da bissecção:", raiz_bisseccao)
+print("Número de iterações da bissecção:", iteracoes_bisseccao)
+print("Raiz pelo método de quase-Newton:", raiz_quasenewton)
+print("Número de iterações de quase-Newton:", iteracoes_quasenewton)
