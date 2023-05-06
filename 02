@@ -1,0 +1,32 @@
+#MÉTODOS NUMÉRICOS COMPUTACIONAIS
+#925-79933
+#Caio dos Santos Campos
+#2019100583
+
+import matplotlib.pyplot as plt
+
+#Substitua o 0 por um número
+x = 1
+precisao = 1e-06
+
+
+iteracoes = 0
+x_values = [x]
+
+
+while abs(x/2 - x) > precisao:
+    x = x/2
+    iteracoes += 1
+    x_values.append(x)
+
+
+print("Último valor de x:", x)
+print("Número de iterações:", iteracoes)
+print("Valores de x ao longo do tempo:", x_values)
+
+
+plt.plot(x_values)
+plt.xlabel('Iterações')
+plt.ylabel('x')
+plt.title('Variação de x ao longo do tempo')
+plt.show()
